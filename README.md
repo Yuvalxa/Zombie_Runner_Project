@@ -41,8 +41,3 @@ To get started with Zombie Runner, follow these steps:
 2. Install any necessary dependencies.
 3. Build and run the game using your preferred development environment.
 4. Enjoy playing Zombie Runner!
-
-## Contributing
-
-Contributions to Zombie Runner are welcome! If you find any issues or have suggestions for improvements, please submit a pull request or open an issue in the repository.
-
