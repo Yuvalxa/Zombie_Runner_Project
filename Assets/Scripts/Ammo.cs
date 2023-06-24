@@ -7,12 +7,20 @@ public class Ammo : MonoBehaviour
     [SerializeField] AmmoSlot[] ammoSlots;
 
     [System.Serializable]
-    private class AmmoSlot
+    public class AmmoSlot
     {
         public AmmoType ammoType;
         public int ammoAmount;
     }
-
+    public void Start()
+    {
+        if(PlayerPrefSaver.instance.LoadAmmoSlots()!=null)
+            ammoSlots = PlayerPrefSaver.instance.LoadAmmoSlots();
+        else
+        {
+            this.SaveAmmoForNextScene();
+        }
+    }
     public int GetCurrentAmmo(AmmoType ammoType)
     {
         return GetAmmoSlot(ammoType).ammoAmount;
@@ -38,6 +46,10 @@ public class Ammo : MonoBehaviour
             }
         }
         return null;
+    }
+    public void SaveAmmoForNextScene()
+    {
+        PlayerPrefSaver.instance.SaveAmmoSlots(this.ammoSlots);
     }
 
 }

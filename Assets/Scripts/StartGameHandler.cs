@@ -17,16 +17,16 @@ public class StartGameHandler : MonoBehaviour
     {
         startGameCanvas.enabled = true;
         Time.timeScale = 0;
-        FindObjectOfType<WeaponSwitcher>().enabled = false;
-        UnityEngine.Cursor.lockState = CursorLockMode.None;
-        UnityEngine.Cursor.visible = false;
+        //FindObjectOfType<WeaponSwitcher>().enabled = false;
+        UnityEngine.Cursor.lockState = CursorLockMode.Confined;
+        UnityEngine.Cursor.visible = true;
     }
 
     private void HandleStart()
     {
         startGameCanvas.enabled = false;
         Time.timeScale = 1;
-        FindObjectOfType<WeaponSwitcher>().enabled = true;
+        //FindObjectOfType<WeaponSwitcher>().enabled = true;
         UnityEngine.Cursor.lockState = CursorLockMode.Locked;
         UnityEngine.Cursor.visible = true;
         startButton.onClick.RemoveListener(HandleStart);

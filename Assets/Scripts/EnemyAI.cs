@@ -16,12 +16,14 @@ public class EnemyAI : MonoBehaviour
     bool isProvoked = false;
     EnemyHealth health;
     Transform target;
+    PlayerHealth playerHealth;
 
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         health = GetComponent<EnemyHealth>();
-        target = FindObjectOfType<PlayerHealth>().transform;
+        playerHealth = FindObjectOfType<PlayerHealth>();
+        target = playerHealth.transform;
     }
 
     void Update()
@@ -31,6 +33,10 @@ public class EnemyAI : MonoBehaviour
             enabled = false;
             navMeshAgent.enabled = false;
         }
+        if (playerHealth.isStealth)
+            chaseRange = 5f;
+        else 
+            chaseRange = 15f;
         distanceToTarget = Vector3.Distance(target.position, transform.position);
         if (isProvoked)
         {
