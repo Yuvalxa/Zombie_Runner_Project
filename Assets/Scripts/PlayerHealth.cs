@@ -21,7 +21,7 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(float damage)
     {
         hitPoints -= damage;
-        PlayerPrefSaver.instance.SetFloat("hitPoints", hitPoints);
+        //PlayerPrefSaver.instance.SetFloat("hitPoints", hitPoints);
         if (hitPoints <= 0)
         {
             GetComponent<DeathHandler>().HandleDeath();
