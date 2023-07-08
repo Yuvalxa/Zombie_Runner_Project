@@ -50,7 +50,9 @@ public class Traning : MonoBehaviour
 
     private void StartEndTranningSequance()
     {
-        throw new NotImplementedException();
+        //TODO add message of you Complete Traninng Congraz!! Now Prepare to DIIIIEEEE MUHAHAHAHHHA
+        SceneLoader.Instance.LoadScene(SceneLoader.Scene.Asylum);
+        Time.timeScale = 0;
     }
 
     private void SetSecondStage()
