@@ -1,0 +1,68 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Traning : MonoBehaviour
+{
+    
+    [SerializeField] GameObject secondStageGO;
+    [SerializeField] GameObject thirdStageGO;
+    // Start is called before the first frame update
+    bool firstStage = true;
+    bool secondStage = false;
+    int numOfTargets = 1;
+    private void Start()
+    {
+        // Subscribe to the static event
+        EnemyHealth.targetDestory += HandleEvent;
+    }
+
+
+    private void OnDestroy()
+    {
+        // Unsubscribe from the static event
+        EnemyHealth.targetDestory -= HandleEvent;
+    }
+    // Update is called once per frame
+    void Update()
+    {
+        if(firstStage && numOfTargets==0)
+        {
+            SetSecondStage();
+        }
+        else if(secondStage && numOfTargets == 0)
+        {
+            SetThirdStage();
+        }
+        else if(numOfTargets == 0)
+        {
+            StartEndTranningSequance();
+        }
+    }
+
+    private void SetThirdStage()
+    {
+        thirdStageGO.SetActive(true);
+        numOfTargets = 2;
+        secondStage = false;
+    }
+
+    private void StartEndTranningSequance()
+    {
+        throw new NotImplementedException();
+    }
+
+    private void SetSecondStage()
+    {
+        secondStageGO.SetActive(true);
+        numOfTargets = 5;
+        firstStage = false;
+        secondStage = true;
+    }
+
+    private void HandleEvent()
+    {
+        numOfTargets--;
+    }
+}

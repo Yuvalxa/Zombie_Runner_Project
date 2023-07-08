@@ -1,13 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] float hitPoints = 100f;
-
+    [SerializeField] bool isTarget = false;
+    public static event Action targetDestory;
     bool isDead = false;
-
     public bool IsDead()
     {
         return isDead;
@@ -19,7 +20,13 @@ public class EnemyHealth : MonoBehaviour
         hitPoints -= damage;
         if (hitPoints <= 0)
         {
-            Die();
+            if (isTarget)
+            {
+                targetDestory?.Invoke();
+                Destroy(this.gameObject);
+            }
+            else
+                Die();
         }
     }
 
