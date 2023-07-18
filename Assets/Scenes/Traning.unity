@@ -2141,7 +2141,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerhealthBar
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4330260298536351877, guid: b769c97c6aad14c2dae5d4410f2a6995, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -19897,7 +19898,7 @@ PrefabInstance:
     - target: {fileID: 48941175042158888, guid: f0d8b6c5f75b14e26a4991e67f7b716c,
         type: 3}
       propertyPath: message
-      value: You can use 3 to get to your rifle.
+      value: Press 3 to choose Your Rifle. Rifle Has high distance range
       objectReference: {fileID: 0}
     - target: {fileID: 48941175042158888, guid: f0d8b6c5f75b14e26a4991e67f7b716c,
         type: 3}
@@ -28476,6 +28477,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlaneMessageColider
+      objectReference: {fileID: 0}
+    - target: {fileID: 48941175042158888, guid: f0d8b6c5f75b14e26a4991e67f7b716c,
+        type: 3}
+      propertyPath: message
+      value: Switch Weapons using 1,2,3 Keys or your Mouse Scroller
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
