@@ -14,12 +14,12 @@ public class Ammo : MonoBehaviour
     }
     public void Start()
     {
-        if(PlayerPrefSaver.instance.LoadAmmoSlots()!=null)
-            ammoSlots = PlayerPrefSaver.instance.LoadAmmoSlots();
-        else
-        {
-            this.SaveAmmoForNextScene();
-        }
+        //if(PlayerPrefSaver.instance.LoadAmmoSlots()!=null)
+        //    ammoSlots = PlayerPrefSaver.instance.LoadAmmoSlots();
+        //else
+        //{
+        //    this.SaveAmmoForNextScene();
+        //}
     }
     public int GetCurrentAmmo(AmmoType ammoType)
     {

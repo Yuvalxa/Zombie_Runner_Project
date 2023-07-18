@@ -61,6 +61,7 @@ public class Traning : MonoBehaviour
         numOfTargets = 5;
         firstStage = false;
         secondStage = true;
+        WarningUI.Instance.ShowMessage("Use ShootGun", "shotgun range is up to 15 meter, but his damge is high");
     }
 
     private void HandleEvent()

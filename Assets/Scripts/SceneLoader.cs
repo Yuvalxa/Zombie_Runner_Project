@@ -32,7 +32,6 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene(scene.ToString());
         Time.timeScale = 1;
     }
-
     public void ReloadGame()
     {
         SceneManager.LoadScene(0);

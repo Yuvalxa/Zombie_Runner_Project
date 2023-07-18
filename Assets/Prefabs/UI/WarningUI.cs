@@ -28,10 +28,18 @@ public class WarningUI : MonoBehaviour
         header.text = head;
         description.text = desc;
         panel.SetActive(true);
+        Time.timeScale = 0;
+        //FindObjectOfType<WeaponSwitcher>().enabled = false;
+        UnityEngine.Cursor.lockState = CursorLockMode.Confined;
+        UnityEngine.Cursor.visible = true;
     }
     private void ClosePanel()
     {
         panel.SetActive(false);
+        Time.timeScale = 1;
+        //FindObjectOfType<WeaponSwitcher>().enabled = false;
+        UnityEngine.Cursor.lockState = CursorLockMode.Confined;
+        UnityEngine.Cursor.visible = true;
     }
 
     private void OnDestroy()

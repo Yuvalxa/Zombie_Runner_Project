@@ -760,7 +760,7 @@ RectTransform:
   m_Children:
   - {fileID: 5868615060513279448}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -841,7 +841,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06ef6fafce9a14538a7a2ce7dc263dda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panel: {fileID: 649042461531790602}
+  panel: {fileID: 7588791227917515623}
   header: {fileID: 425745708453981282}
   description: {fileID: 9087905070300162611}
   okBtn: {fileID: 2463010553541986179}
@@ -905,7 +905,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.88235295}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

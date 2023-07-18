@@ -1,18 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityStandardAssets.Characters.FirstPerson;
 
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] float hitPoints = 100f;
+    float currentHealth;
     [SerializeField]RigidbodyFirstPersonController rigidbodyFirstPersonController;
+    [SerializeField] Image healthBar;
+
     public bool isStealth;
 
 
     private void Start()
     {
-        hitPoints = PlayerPrefSaver.instance.GetFloat("hitPoints");
+        currentHealth = hitPoints;
+        healthBar.fillAmount = currentHealth/hitPoints;
+        //hitPoints = PlayerPrefSaver.instance.GetFloat("hitPoints");
     }
     public void Update()
     {
@@ -20,9 +26,10 @@ public class PlayerHealth : MonoBehaviour
     }
     public void TakeDamage(float damage)
     {
-        hitPoints -= damage;
+        currentHealth -= damage;
+        healthBar.fillAmount = currentHealth / hitPoints;
         //PlayerPrefSaver.instance.SetFloat("hitPoints", hitPoints);
-        if (hitPoints <= 0)
+        if (currentHealth <= 0)
         {
             GetComponent<DeathHandler>().HandleDeath();
         }
