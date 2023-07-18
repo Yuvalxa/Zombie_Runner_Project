@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Traning : MonoBehaviour
 {
-    
+    [SerializeField] GameObject firstStageGO;
     [SerializeField] GameObject secondStageGO;
     [SerializeField] GameObject thirdStageGO;
     // Start is called before the first frame update
@@ -29,10 +29,12 @@ public class Traning : MonoBehaviour
     {
         if(firstStage && numOfTargets==0)
         {
+            firstStageGO.SetActive(false);
             SetSecondStage();
         }
         else if(secondStage && numOfTargets == 0)
         {
+            secondStageGO.SetActive(false);
             SetThirdStage();
         }
         else if(numOfTargets == 0)
@@ -58,7 +60,7 @@ public class Traning : MonoBehaviour
     private void SetSecondStage()
     {
         secondStageGO.SetActive(true);
-        numOfTargets = 5;
+        numOfTargets = 3;
         firstStage = false;
         secondStage = true;
         WarningUI.Instance.ShowMessage("Use ShootGun", "shotgun range is up to 15 meter, but his damge is high");
