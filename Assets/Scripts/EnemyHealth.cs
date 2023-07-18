@@ -2,13 +2,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] float hitPoints = 100f;
+    float currentHealth;
     [SerializeField] bool isTarget = false;
+    [SerializeField] bool isTraningZombie = false;
+    [SerializeField] Image image;
     public static event Action targetDestory;
     bool isDead = false;
+    private void Start()
+    {
+        currentHealth = hitPoints;
+        image.fillAmount = currentHealth / hitPoints;
+    }
     public bool IsDead()
     {
         return isDead;
@@ -18,10 +27,11 @@ public class EnemyHealth : MonoBehaviour
     {
         if(!isTarget)
             BroadcastMessage("OnDamageTaken");
-        hitPoints -= damage;
-        if (hitPoints <= 0)
+        currentHealth -= damage;
+        image.fillAmount = currentHealth / hitPoints;
+        if (currentHealth <= 0)
         {
-            if (isTarget)
+            if (isTarget || isTraningZombie)
             {
                 targetDestory?.Invoke();
                 Destroy(this.gameObject);

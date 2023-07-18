@@ -46,13 +46,14 @@ public class Traning : MonoBehaviour
     private void SetThirdStage()
     {
         thirdStageGO.SetActive(true);
-        numOfTargets = 2;
+        numOfTargets = 1;
         secondStage = false;
     }
 
     private void StartEndTranningSequance()
     {
         //TODO add message of you Complete Traninng Congraz!! Now Prepare to DIIIIEEEE MUHAHAHAHHHA
+        WarningUI.Instance.ShowMessage("Finished", "Your Ready to go kill some Zombies");
         SceneLoader.Instance.LoadScene(SceneLoader.Scene.Asylum);
         Time.timeScale = 0;
     }
