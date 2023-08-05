@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    public enum Scene { Tutorial, Asylum }
+    public enum Scene { Tranning, Asylum }
 
     // Singleton instance
     private static SceneLoader instance;
@@ -27,6 +27,7 @@ public class SceneLoader : MonoBehaviour
 
         instance = this;
         DontDestroyOnLoad(gameObject);
+        Debug.LogError(Application.persistentDataPath);
     }
     private void Start()
     {

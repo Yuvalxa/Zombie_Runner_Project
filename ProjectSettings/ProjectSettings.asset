@@ -891,6 +891,8 @@ PlayerSettings:
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
   cloudServicesEnabled:
+    Collab: 0
+    Purchasing: 0
     UNet: 1
   luminIcon:
     m_Name: 
@@ -910,11 +912,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 763e38eb-eea0-4426-af28-9775f2ef2d86
+  cloudProjectId: 31173039-2630-4730-be24-92e3048a4608
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: NightmareTerrian
-  organizationId: asgardsyst
+  projectName: NightmareTerrian (1)
+  organizationId: yuvalsmastey
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 1
   hmiLoadingImage: {fileID: 0}
