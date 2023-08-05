@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Game.Core.Sounds;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
@@ -7,6 +8,7 @@ public class SceneLoader : MonoBehaviour
 
     // Singleton instance
     private static SceneLoader instance;
+    [SerializeField] AudioClip gameMusic;
 
     // Public property to access the singleton instance
     public static SceneLoader Instance
@@ -26,11 +28,16 @@ public class SceneLoader : MonoBehaviour
         instance = this;
         DontDestroyOnLoad(gameObject);
     }
+    private void Start()
+    {
+        SoundManager.Instance.PlayMusic(gameMusic);
+    }
 
     public void LoadScene(Scene scene)
     {
         SceneManager.LoadScene(scene.ToString());
         Time.timeScale = 1;
+        SoundManager.Instance.PlayMusic(gameMusic);
     }
     public void ReloadGame()
     {

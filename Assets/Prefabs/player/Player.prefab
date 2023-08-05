@@ -663,6 +663,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitPoints: 100
   rigidbodyFirstPersonController: {fileID: 4930458581114222841}
+  healthBar: {fileID: 0}
   isStealth: 0
 --- !u!114 &6746083239638910293
 MonoBehaviour:
@@ -807,6 +808,11 @@ PrefabInstance:
       propertyPath: ammoSlot
       value: 
       objectReference: {fileID: 1153370460438210499}
+    - target: {fileID: 333479487509396531, guid: 4e7db802151bc0e48ad38a3b76b2727a,
+        type: 3}
+      propertyPath: shootSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 53cf2730d49fe45e488cba64503da27e, type: 3}
     - target: {fileID: 2337074158996965286, guid: 4e7db802151bc0e48ad38a3b76b2727a,
         type: 3}
       propertyPath: m_RootOrder
@@ -901,6 +907,11 @@ PrefabInstance:
       propertyPath: ammoSlot
       value: 
       objectReference: {fileID: 1153370460438210499}
+    - target: {fileID: 333479487509396531, guid: 0e46072e0a393ec4b9045a1b25e24678,
+        type: 3}
+      propertyPath: shootSound
+      value: 
+      objectReference: {fileID: 8300000, guid: e93c89e76f3424469bbad3939691515d, type: 3}
     - target: {fileID: 2337074158996965286, guid: 0e46072e0a393ec4b9045a1b25e24678,
         type: 3}
       propertyPath: m_RootOrder
@@ -995,6 +1006,11 @@ PrefabInstance:
       propertyPath: ammoSlot
       value: 
       objectReference: {fileID: 1153370460438210499}
+    - target: {fileID: 333479487509396531, guid: ada2587319194f542957a8c2ae277cb9,
+        type: 3}
+      propertyPath: shootSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 83d584eba418346e09079499bf837dba, type: 3}
     - target: {fileID: 2337074158996965286, guid: ada2587319194f542957a8c2ae277cb9,
         type: 3}
       propertyPath: m_RootOrder

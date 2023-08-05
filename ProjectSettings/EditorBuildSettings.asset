@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Traning.unity
+    guid: c31a77b321bc1a745a4437bc782a02c2
+  - enabled: 1
     path: Assets/Scenes/Asylum.unity
     guid: 8ecd08979d9a71346b5b9c72a695b586
   m_configObjects: {}

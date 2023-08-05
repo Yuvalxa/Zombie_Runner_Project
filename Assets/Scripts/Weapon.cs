@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Game.Core.Sounds;
 using TMPro;
 using UnityEngine;
 
@@ -15,6 +16,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] AmmoType ammoType;
     [SerializeField] float timeBetweenShots = 0.5f;
     [SerializeField] TextMeshProUGUI ammoText;
+    [SerializeField] AudioClip shootSound;
 
     bool canShoot = true;
 
@@ -44,6 +46,7 @@ public class Weapon : MonoBehaviour
         if (ammoSlot.GetCurrentAmmo(ammoType) > 0)
         {
             PlayMuzzleFlash();
+            SoundManager.Instance.PlayEffect(shootSound);
             ProcessRaycast();
             ammoSlot.ReduceCurrentAmmo(ammoType);
         }
