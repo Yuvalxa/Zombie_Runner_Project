@@ -7037,6 +7037,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WarningCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7161877081181716237, guid: c477d64171820438a9f9b10d376e3402,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7659880323045139749, guid: c477d64171820438a9f9b10d376e3402,
         type: 3}
       propertyPath: m_Pivot.x
