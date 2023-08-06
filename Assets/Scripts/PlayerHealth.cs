@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Game.Core.Sounds;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityStandardAssets.Characters.FirstPerson;
@@ -10,6 +11,7 @@ public class PlayerHealth : MonoBehaviour
     float currentHealth;
     [SerializeField]RigidbodyFirstPersonController rigidbodyFirstPersonController;
     [SerializeField] Image healthBar;
+    [SerializeField] AudioClip gotHitMusic;
 
     public bool isStealth;
 
@@ -28,6 +30,7 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth -= damage;
         healthBar.fillAmount = currentHealth / hitPoints;
+        SoundManager.Instance.PlayEffect(gotHitMusic);
         //PlayerPrefSaver.instance.SetFloat("hitPoints", hitPoints);
         if (currentHealth <= 0)
         {

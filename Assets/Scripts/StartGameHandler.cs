@@ -11,6 +11,9 @@ public class StartGameHandler : MonoBehaviour
     [SerializeField] Canvas startGameCanvas;
     [SerializeField] UnityEngine.UI.Button startButton;
     [SerializeField] UnityEngine.UI.Button skipTutorial;
+    public static Action stopShooting;
+    public static Action enableShooting;
+
     private void Awake()
     {
         startButton.onClick.AddListener(HandleStart);
@@ -28,6 +31,7 @@ public class StartGameHandler : MonoBehaviour
     {
         startGameCanvas.enabled = true;
         Time.timeScale = 0;
+        stopShooting?.Invoke();
         //FindObjectOfType<WeaponSwitcher>().enabled = false;
         UnityEngine.Cursor.lockState = CursorLockMode.Confined;
         UnityEngine.Cursor.visible = true;
@@ -37,6 +41,7 @@ public class StartGameHandler : MonoBehaviour
     {
         startGameCanvas.enabled = false;
         Time.timeScale = 1;
+        enableShooting?.Invoke();
         //FindObjectOfType<WeaponSwitcher>().enabled = true;
         UnityEngine.Cursor.lockState = CursorLockMode.Locked;
         UnityEngine.Cursor.visible = true;

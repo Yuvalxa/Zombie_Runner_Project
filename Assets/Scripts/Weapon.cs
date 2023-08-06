@@ -17,14 +17,22 @@ public class Weapon : MonoBehaviour
     [SerializeField] float timeBetweenShots = 0.5f;
     [SerializeField] TextMeshProUGUI ammoText;
     [SerializeField] AudioClip shootSound;
-
     bool canShoot = true;
+    private void Awake()
+    {
+        StartGameHandler.stopShooting +=OnDisable;
+        StartGameHandler.enableShooting +=OnEnable;
 
+    }
     private void OnEnable()
     {
         canShoot = true;
     }
+    private void OnDisable()
+    {
+        canShoot = false;
 
+    }
     void Update()
     {
         DisplayAmmo();

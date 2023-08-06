@@ -15,6 +15,7 @@ public class GameWonHandler:MonoBehaviour
         gameWonCanvas.gameObject.SetActive(true);
         gameWonCanvas.enabled = true;
         Time.timeScale = 0;
+        StartGameHandler.stopShooting?.Invoke();
         FindObjectOfType<WeaponSwitcher>().enabled = false;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;

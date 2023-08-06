@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Game.Core.Sounds;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,7 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] bool isTarget = false;
     [SerializeField] bool isTraningZombie = false;
     [SerializeField] Image image;
+    [SerializeField] AudioClip enemyDeathSound;
     public static event Action targetDestory;
     bool isDead = false;
     private void Start()
@@ -44,6 +46,7 @@ public class EnemyHealth : MonoBehaviour
     private void Die()
     {
         if (isDead) return;
+        SoundManager.Instance.PlayEffect(enemyDeathSound);
         isDead = true;
         GetComponent<Animator>().SetTrigger("die");
     }

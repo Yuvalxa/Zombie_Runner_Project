@@ -14,6 +14,7 @@ public class DeathHandler : MonoBehaviour
 
     public void HandleDeath()
     {
+        StartGameHandler.stopShooting?.Invoke();
         gameOverCanvas.gameObject.SetActive(true);
         gameOverCanvas.enabled = true;
         Time.timeScale = 0;
